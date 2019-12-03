@@ -23,9 +23,10 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;&#x2F;error_img&#x2F;title.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;&#x2F;error_img&#x2F;time.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;&#x2F;error_img&#x2F;blank.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;&#x2F;error_img&#x2F;bian.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;&#x2F;error_img&#x2F;parent.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;&#x2F;error_img&#x2F;error_config.png">
-<meta property="og:updated_time" content="2019-12-03T03:31:37.683Z">
+<meta property="og:updated_time" content="2019-12-03T13:26:56.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;&#x2F;error_img&#x2F;theme_show.png">
   
@@ -68,7 +69,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="https://xiaolin159.github.io/mysite/" target="_blank" rel="noopener">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -132,7 +133,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 50%"><a href="https://xiaolin159.github.io/mysite/" target="_blank" rel="noopener">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -189,14 +190,19 @@
 <p>当然你的网页有_confif.yml你的主题也有_config.yml,它在你的博客里的<b>themes</b>下</p>
 <img src="..//error_img/blank.png" alt="">
 <p>下的国人主题通常都有中文注释这里已经解释的相当清楚了,我就不在过多的讲解，当然如果你这都不明白那你的道路就很艰难了</p>
+<p>git你的安装软件通常直接双击他会自己添加环境变量,</p>
+<img src="..//error_img/bian.png" alt="">
+<p>在环境变量里把你的git安装路径添加进去就可以了,这样他就不会报关于git安装的错误了,还有一个办法是用git自带的命令窗口不要用cmd不要用cmd不要用cmd</p>
+-------------------------------------------
+<h1>问题</h1>
 <b>点击目录或关于我跳转页面问题</b>
 <p>yilia\layout\_partial\left-col.ejs找到这个文件</p>
 <img src="..//error_img/parent.png" alt="">
 <p>找到这个header-smart-menu类名把它下面的a标签加上target:"_parent"在当前页面打开链接就不会产生新页面跳转了</p>
--------------------------------------------
-<h1>问题</h1>
 <p>这里有一个特别坑的点就是我圈起来的地方,他会在你所有的路径前面加上时间导致你的路径错误记得要把时间删掉<br>url:这个选项是如果你的博客网站在你的网站的子路径,在url:上就要写上你的网站的url</p>
 <img src="..//error_img/error_config.png" alt="">
+<p>首先你还需要在你的目录上安装一个插件,在你的博客的路径下面敲上去就好了</p>
+<b style="background-color:silver">npm i hexo-generator-json-content --save</b>
 <p>这里报错的原因他也写上了直接把这段文字粘贴到你的_config.yml里面</p>
 <b style="background-color:silver">jsonContent:<br>
     meta: false<br>
@@ -239,7 +245,13 @@
     /script
     >
 </b><br>
-<b>把上面这段文字直接加到footer代码的最下面就好了</b>
+<b>把上面这段文字直接加到footer代码的最下面就好了,这段代码是死的他是根据你设置的时间开始算的所以没有服务器这么一说,当然你也可以用卜蒜子,百度自行搜索</b>
+<b>最后一个问题也是最让我头疼的,就是你在上传到github时报错,大概意思就是生成错误如果你也时感觉头疼的话就往下看把</b><br>
+<b style="background-color:silver">首先重新安装git</b><br>
+<b style="background-color:silver">git config --global user.email "2689101318@qq.com"</b><br>
+<b style="background-color:silver">git config --global user.name "xiaolin159"</b><br>
+<p>这两句话是添加全局配置文件姓名的意思</p>
+<p>然后在上传就好了我是这样的,网上好多办法什么重现添加系统变量,什么把验证方式改为ssh,什么创建一个多的分支先往这个分支上传,最后在合并分支,什么储存库还原。果然还是要对症下药才是最好的</p>
 
 
 
@@ -468,15 +480,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">git,发布自己的网站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">hexo安装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">git,发布自己的网站</a>
               </li>
             
             <div class="clearfix"></div>
