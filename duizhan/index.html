@@ -7,15 +7,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xiaolin159.github.io">
-  <title>Tag: javascript | 如果觉得我的名字太长就叫我小林好了</title>
+  <title>堆栈详情 | 如果觉得我的名字太长就叫我小林好了</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="hexo笔记博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="如果觉得我的名字太长就叫我小林好了">
-<meta property="og:url" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;tags&#x2F;javascript&#x2F;index.html">
+  <meta name="description" content="今天来讲讲什么是堆什么是栈">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="堆栈详情">
+<meta property="og:url" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;duizhan&#x2F;index.html">
 <meta property="og:site_name" content="如果觉得我的名字太长就叫我小林好了">
+<meta property="og:description" content="今天来讲讲什么是堆什么是栈">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;duizhan&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;duizhan&#x2F;2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;duizhan&#x2F;3.png">
+<meta property="og:updated_time" content="2019-12-05T11:45:59.358Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;duizhan&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="如果觉得我的名字太长就叫我小林好了" type="application/atom+xml">
   
@@ -134,36 +141,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-duizhan" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/duizhan/" class="archive-article-date">
-  	<time datetime="2019-12-05T02:47:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/duizhan/">堆栈详情</a>
+    <h1 class="article-title" itemprop="name">
+      堆栈详情
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/duizhan/" class="archive-article-date">
+  	<time datetime="2019-12-05T02:47:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><b>今天来讲讲什么是堆什么是栈</b></p>
+<a id="more"></a>
+<p>var a=4<br>
+var b=a<br>
+var a=10<br>
+console.log(a,b)</p>
+<p>这会输出什么,先把a赋值给了b先当与一个栈就是一块空间,a=4在最上面,把b=a,就像相当与把b上面
+一层的a赋值给了b,a在前面,b在后面,之后a又出现变化,这样b是不会变化的,栈使用完数据会自动清除自己</p>
+<img src="..//images/duizhan/1.png" alt="">
+<p>栈中自己保存数据用完自动清理自己的数据,但是还有一种叫做堆</p>
+<p>var obj={<br>
+        a:1<br>
+        b:5<br>}
+var obj1=obj;
+var obj.a=10
+console.log(obj1.a)
+        </p>
+<p>你觉的是怎么一个运算结果</p>
+<img src="..//images/duizhan/2.png" alt="">
+<p>这就堆的赋值原理,对象是存储在堆中的,只有字符串,数值型,还有Boolean是不存储在栈里的,在栈中(a:1,b:5)这些是在堆中的,而obj和obj1在栈中只有存放的地址,如果你改变量堆中的数值,栈中的地址是指向堆中的数值的,那么调用obj1.a只是调用堆中的地址罢了所以obj1.a等于10</p>
+<img src="..//images/duizhan/3.png" alt="">
+<b>还有一个原理就是栈中用完一个数据就会自动清空,而堆中则会一直保留,你用一个他就多一个,当内存到达一定程度的时候,他就溢出了,牛逼一点的名字就叫内存溢出<br>基本上都是堆溢出,为什么叫堆栈溢出了,因为栈中有堆的地址,他们之间就有了关联所以就叫堆栈溢出</b>
+<b>最后在说一个垃圾回收机制把,js中没有手动垃圾回收机制,只要有对象的地址还在引用堆中的数值,就不会自动清理堆中的数值,只有给obj=null，obj1=null清空时才会自动回收,当然自动回收也不是立即执行,总而言之就是你用完堆之后记得把堆中的数值清空</b>
+      
+
+      
+                    <br>  <br>  <br>  <br>
+                    
+                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare">
+    <strong class="author">本文作者：</strong>
+    
+      如果觉得我的名字太长就叫我小林好了
+    
+    <br>
+    <strong class="update-time">最后更新：</strong>
+    2019-12-05
+    <br>
+    <strong class="article-titles">本文标题：</strong>
+    <a href="http://xiaolin159.github.io/duizhan/" title="堆栈详情" target="_blank">堆栈详情</a>
+    <br>
+    <strong class="article-url">本文链接：</strong>
+    <a href="http://xiaolin159.github.io/duizhan/" title="堆栈详情" target="_blank">http://xiaolin159.github.io/duizhan/</a>
+    <br>
+    <strong class="copyright">版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本文归作者所有。转载请注明出处！">CC BY-NC-SA 4.0</a>
+    许可协议进行许可。转载请注明出处！
+    
+  </div>
+
+<!-- 添加版权声明》 -->
+
+                    
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -175,19 +236,67 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/data-is-up/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          上传总是显示已经最新的问题
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一般人不会的hexo框架博客安装</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
+
+
+
 
 
           </div>
@@ -248,9 +357,9 @@ setInterval("createtime()",250);
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
