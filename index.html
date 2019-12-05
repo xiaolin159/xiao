@@ -136,6 +136,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-上传总是显示已经最新的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/%E4%B8%8A%E4%BC%A0%E6%80%BB%E6%98%AF%E6%98%BE%E7%A4%BA%E5%B7%B2%E7%BB%8F%E6%9C%80%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/">上传又是显示已经最新的问题</a>
+    </h1>
+  
+
+        
+        <a href="/%E4%B8%8A%E4%BC%A0%E6%80%BB%E6%98%AF%E6%98%BE%E7%A4%BA%E5%B7%B2%E7%BB%8F%E6%9C%80%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2019-12-05T03:47:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><b>这个从我还是小白开始就困扰我很久的问题了,知道我成为新手才解决,估计这个问题你们也一定很头疼,当然搜百度时搜不到的,我就一个一个的讲解吧!</b></p>
+<p>首先第一个问题,你在目录下git config user.naem ""无效时,你只需要设置他为git目录即可</p>
+<b>git init</b>
+<p>就是这么简单</p>
+<b>好了接下来就是最大的问题了,boss时刻终于来了,兴奋吗开心吗激动吗</b>
+<img src="..//error_img/boss.png" alt="">
+<p>就是这个错误导致我老是无法上传,网上老是推荐使用ssh就没有一个解决的吗,那么我就来教大家解决换个问题吧</p>
+<img src="..//error_img/errorboss.png" alt="">
+<p>看到这个路径了没有,我们进去瞧瞧</p>
+<img src="..//error_img/errorurl.png" alt="">
+<p>我们发现根本就没有这个文件,不出错才怪了,那就执行这句话吧让它成为一个git文件夹</p>
+<b>git init</b>
+<p>这是在git --global config user.naem ""发现问题解决了大功告成</p>
+<b>总结一下吧,可能时没有git配置文件的认证,它就自动采用window的凭证认证了所以才会报错无法上传,和共享时开始了空密码不是一样吗。</b>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/%E4%B8%8A%E4%BC%A0%E6%80%BB%E6%98%AF%E6%98%BE%E7%A4%BA%E5%B7%B2%E7%BB%8F%E6%9C%80%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-堆栈详情" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -664,15 +752,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">问题,小技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">git,发布自己的网站</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">问题,小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,6 +765,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">问题</a>
               </li>
             
             <div class="clearfix"></div>
