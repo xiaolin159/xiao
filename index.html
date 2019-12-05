@@ -136,6 +136,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-堆栈详情" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/%E5%A0%86%E6%A0%88%E8%AF%A6%E6%83%85/">堆栈详情</a>
+    </h1>
+  
+
+        
+        <a href="/%E5%A0%86%E6%A0%88%E8%AF%A6%E6%83%85/" class="archive-article-date">
+  	<time datetime="2019-12-05T02:47:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><b>今天来讲讲什么时堆什么是栈</b></p>
+<p>var a=4<br>
+var b=a<br>
+var a=10<br>
+console.log(a,b)</p>
+<p>这会输出什么,先把a赋值给了b先当与一个栈就是一块空间,a=4在最上面,把b=a,就像相当与把b上面
+一层的a赋值给了b,a在前面,b在后面,之后a又出现变化,这样b是不会变化的,栈使用完数据会自动清除自己</p>
+<img src="..//duizhan/1.png" alt="">
+<p>栈中自己保存数据用完自动清理自己的数据,但是还有一种叫做堆</p>
+<p>var obj={<br>
+        a:1<br>
+        b:5<br>}
+var obj1=obj;
+var obj.a=10
+console.log(obj1.a)
+        </p>
+<p>你觉的是怎么一个运算结果</p>
+<img src="..//duizhan/2.png" alt="">
+<p>这就堆的赋值原理,对象是存储在堆中的,只有字符串,数值型,还有Boolean是不存储在栈里的,在栈中(a:1,b:5)这些是在堆中的,而obj和obj1在栈中只有存放的地址,如果你改变量堆中的数值,栈中的地址是指向堆中的数值的,那么调用obj1.a只是调用堆中的地址罢了所以obj1.a等于10</p>
+<img src="..//duizhan/3.png" alt="">
+<b>还有一个原理就是栈中用完一个数据就会自动清空,而堆中则会一直保留,你用一个他就多一个,当内存到达一定程度的时候,他就溢出了,牛逼一点的名字就叫内存溢出<br>基本上都是堆溢出,为什么叫堆栈溢出了,因为栈中有堆的地址,他们之间就有了关联所以就叫堆栈溢出</b>
+<b>最后在说一个垃圾回收机制把,js中没有手动垃圾回收机制,只要有对象的地址还在引用堆中的数值,就不会自动清理堆中的数值,只有给obj=null，obj1=null清空时才会自动回收,当然自动回收也不是立即执行,总而言之就是你用完堆之后记得把堆中的数值清空</b>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/%E5%A0%86%E6%A0%88%E8%AF%A6%E6%83%85/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -578,11 +672,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">hexo安装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
               </li>
             
             <div class="clearfix"></div>
