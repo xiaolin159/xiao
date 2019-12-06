@@ -7,15 +7,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://xiaolin159.github.io">
-  <title>Tag: javascript | 如果觉得我的名字太长就叫我小林好了</title>
+  <title>数值转换 | 如果觉得我的名字太长就叫我小林好了</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="hexo笔记博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="如果觉得我的名字太长就叫我小林好了">
-<meta property="og:url" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;tags&#x2F;javascript&#x2F;index.html">
+  <meta name="description" content="今天我们来讲一下什么是数值的运算和进制之间的转换吧,主要讲二进制和十六精致之间的转换,顺便讲一下数值的储存">
+<meta name="keywords" content="数值,进制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数值转换">
+<meta property="og:url" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;value&#x2F;index.html">
 <meta property="og:site_name" content="如果觉得我的名字太长就叫我小林好了">
+<meta property="og:description" content="今天我们来讲一下什么是数值的运算和进制之间的转换吧,主要讲二进制和十六精致之间的转换,顺便讲一下数值的储存">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;strin.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;toString.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;number.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;parseint.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;maxfloat.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;tofixed.png">
+<meta property="og:updated_time" content="2019-12-06T13:44:12.044Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;strin.png">
   
     <link rel="alternative" href="/atom.xml" title="如果觉得我的名字太长就叫我小林好了" type="application/atom+xml">
   
@@ -134,60 +144,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-value" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/duizhan/" class="archive-article-date">
-  	<time datetime="2019-12-05T02:47:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/duizhan/">堆栈详情</a>
+    <h1 class="article-title" itemprop="name">
+      数值转换
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/value/" class="archive-article-date">
+  	<time datetime="2019-12-06T12:51:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
+</a>
+        
+      </header>
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><b>今天我们来讲一下什么是数值的运算和进制之间的转换吧,主要讲二进制和十六精致之间的转换,顺便讲一下数值的储存</b></p>
+<a id="more"></a>
+<h1>字符串转换</h1>
+<br><code>String()</code>
+<p>这个是强转字符串类型,因该都知道吧,不知道也没有关系看下面的图片吧,不仅可以转换变量还可以转换常量,比如ture,false,null之类的不会变的</p>
+<img src="..//images/value/strin.png" alt="">
+<br><code>toString()</code>
+<p>这也是一个字符串类型转换,不够他比较智能,在toString(2-36)在括号里写值就是转换成什么进制,范围range是2-36,在下面图片中可以看到我错误的所在</p>
+<img src="..//images/value/toString.png" alt="">
+<h1>数值之间的转换</h1>
+<br><code>Number()</code>
+<p>这个就是数据类型强制转换为整数类型</p>
+<img src="..//images/value/number.png" alt="">
+<p>看到这里发现了什么了没有,就是字符串类型在控制台显示为黑色,数值型显示为蓝色,没发现再仔细看看</p>
+<br><code>paseInt()</code>
+<p>这个是转换为整数型,会去掉小数点,但是不会四舍五入,他有一个特点,就是如果第0位是字母或符号直接转换结果就是NaN,就是不规则的数值类型,转换机制是从第0位开始到下一个字母,如果没有字母就是输出完整的数字</p>
+<img src="..//images/value/parseint.png" alt="">
+<br><code>paseFloat()</code>
+<p>这个就是转换位浮点型,不会去点小数,float和css中的浮动不就是一个单词吗注意到了吗,它遇到字母的机制是和<code>praseInt()</code>一摸一样的,看到最大的小数位数了没,对没错就是16位</p>
+<img src="..//images/value/maxfloat.png" alt="">
+<br><code>to.fixed()</code>
+<p>这个是保留几位小数,它是会四舍五入的,看到下面我保留99位小数是不应该在这个数值后面加0吗？为什么出现了一大串数值不对的数字,这是应为0.33333这个小数在转换过程中数据消耗了,你知道的计算机只认识二级制所以在转换过程中丢失了</p>
+<img src="..//images/value/tofixed.png" alt="">
+
+
+
+
+
+      
+                    
+                    <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" style="margin-top:50px;background-color:silver;border-radius:5px;box-shadow:1px 1px 10px gray">
+    <strong class="author">本文作者：</strong>
+    
+      如果觉得我的名字太长就叫我小林好了
+    
+    <br>
+    <strong class="update-time">最后更新：</strong>
+    2019-12-06
+    <br>
+    <strong class="article-titles">本文标题：</strong>
+    <a href="http://xiaolin159.github.io/value/" title="数值转换" target="_blank">数值转换</a>
+    <br>
+    <strong class="article-url">本文链接：</strong>
+    <a href="http://xiaolin159.github.io/value/" title="数值转换" target="_blank">http://xiaolin159.github.io/value/</a>
+    <br>
+    <strong class="copyright">版权声明：</strong>
+    本作品采用
+    <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本文归作者所有。转载请注明出处！">CC BY-NC-SA 4.0</a>
+    许可协议进行许可。转载请注明出处！
+    
+  </div>
+
+<!-- 添加版权声明》 -->
+
+                    
+      
+
+
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">数值,进制</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/data-is-up/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">上传总是显示已经最新的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
+
+
+
 
 
           </div>
@@ -248,9 +358,9 @@ setInterval("createtime()",250);
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
