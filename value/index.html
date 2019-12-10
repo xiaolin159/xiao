@@ -23,7 +23,13 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;parseint.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;maxfloat.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;tofixed.png">
-<meta property="og:updated_time" content="2019-12-06T13:44:12.044Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;two.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;16.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;ipv4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;ipv4img.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;ipv4128.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;nan.png">
+<meta property="og:updated_time" content="2019-12-07T08:46:17.367Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;xiaolin159.github.io&#x2F;&#x2F;images&#x2F;value&#x2F;strin.png">
   
@@ -169,28 +175,66 @@
         <p><b>今天我们来讲一下什么是数值的运算和进制之间的转换吧,主要讲二进制和十六精致之间的转换,顺便讲一下数值的储存</b></p>
 <a id="more"></a>
 <h1>字符串转换</h1>
-<br><code>String()</code>
+<br><br><code>String()</code>
 <p>这个是强转字符串类型,因该都知道吧,不知道也没有关系看下面的图片吧,不仅可以转换变量还可以转换常量,比如ture,false,null之类的不会变的</p>
 <img src="..//images/value/strin.png" alt="">
-<br><code>toString()</code>
+<br><br><code>toString()</code>
 <p>这也是一个字符串类型转换,不够他比较智能,在toString(2-36)在括号里写值就是转换成什么进制,范围range是2-36,在下面图片中可以看到我错误的所在</p>
 <img src="..//images/value/toString.png" alt="">
 <h1>数值之间的转换</h1>
-<br><code>Number()</code>
+<br><br><code>Number()</code>
 <p>这个就是数据类型强制转换为整数类型</p>
 <img src="..//images/value/number.png" alt="">
 <p>看到这里发现了什么了没有,就是字符串类型在控制台显示为黑色,数值型显示为蓝色,没发现再仔细看看</p>
-<br><code>paseInt()</code>
+<br><br><code>paseInt()</code>
 <p>这个是转换为整数型,会去掉小数点,但是不会四舍五入,他有一个特点,就是如果第0位是字母或符号直接转换结果就是NaN,就是不规则的数值类型,转换机制是从第0位开始到下一个字母,如果没有字母就是输出完整的数字</p>
 <img src="..//images/value/parseint.png" alt="">
-<br><code>paseFloat()</code>
+<br><br><code>paseFloat()</code>
 <p>这个就是转换位浮点型,不会去点小数,float和css中的浮动不就是一个单词吗注意到了吗,它遇到字母的机制是和<code>praseInt()</code>一摸一样的,看到最大的小数位数了没,对没错就是16位</p>
 <img src="..//images/value/maxfloat.png" alt="">
-<br><code>to.fixed()</code>
+<br><br><code>to.fixed()</code>
 <p>这个是保留几位小数,它是会四舍五入的,看到下面我保留99位小数是不应该在这个数值后面加0吗？为什么出现了一大串数值不对的数字,这是应为0.33333这个小数在转换过程中数据消耗了,你知道的计算机只认识二级制所以在转换过程中丢失了</p>
 <img src="..//images/value/tofixed.png" alt="">
-
-
+<h1>二进制和十六进制之间的转换</h1>
+<p>首先我们要明白什么是二进制什么是十六进制,二进制是01组成的一串数字,而十六进制则是从1到f之间组成的数字</p>
+<img src="..//images/value/two.png" alt="">
+<p>二进制的规则是1*2(位数)或0*2(位数)，位数为1就是1*2(位数)，位数为就是0*2(位数)，这里的位数是平方=位数的值,最后在把所有的位数的和加起来就是这个二进制的和,如图所示我们这个二进制对应的位数的值为1 2 4 8把他加起来就是我们这个二进制的值=15，如果后面还有数字依旧遵顼这个规则</p>
+<img src="..//images/value/16.png" alt="">
+<p>那看到这里又想改如何转换十六进制了，我们把二进制转换为数字，如图所示最上面是数字f=15=1111，这样的一个转换关系,首先我把二进制从后面往前分割,四位四位的分割,然后转换为数字,四位一算,十进制转十六禁止应该明白吧,不明白也没关系,123456789abcdef这个顺序就是16进制你的数字是多少就是那个字母,而16精致就是反着转换明白了吗</p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h1>课外扩展</h1>
+<b>如果你接着看了下去,说明你明白了数值类型之间的转换，这可是基础一定要会，那么我们就讲讲扩展的知识吧</b>
+<h1>十六进制扩展</h1>
+<br><br><code>div{
+background-color:#ffffff;
+}</code>
+<p>看到这个颜色发现这个很熟悉了没有，对没错就是十六进制只是前面加上了一个#号，(⊙ˍ⊙)所以有没有想到这么运用这个，
+我说说我的吧,输出是再见前面加上一个"f"+让后面的十六进制一直加,不就达到了一个自动更换颜色的程序了吗，发个实例程序吧</p>
+<br><br><code>
+var color=0x00000000;<br>
+setInterval(function(){<br>
+    color+=2;<br>
+    document.getElementById("div").style.backgroundColor="#"+color.toString(16);<br>
+},5)<br>
+</code>
+<p>看明白了这个程序的意思了吗,setInterval就是一只调用内部的函数,color=0x00000000前面的0x是16进制的代表如果你不写这个他不就变成了十进制的数字了吗,我让每一次循环时他都加2，然后再把这个颜色输出出来，到最大值时他就停了或者你自己写条件，自己试试吧</p>
+<h1>二进制扩展</h1>
+<img src="..//images/value/ipv4.png" alt="">
+<p>你知道ipv4地址也是用二进制表达的吗,最大个位数是（11111111）八个一组成的二进制网络协议中是要去头去尾的应为255是广播地址,头是你的IP地址段的头这里就举例为1吧，通常1都用在交换机上了,你可以看的你的默认网关，就明白了他是你上一级设备的ip由他给你分发IP地址，我们在拿一个最大网段的IP地址举例吧，255.255.255.254， 这个IP你怎么看,就是11111111，11111111，11111111，11111110，就是这样的一个二进制组成的，那么常说的ip划分又是什么了,子网掩码又是什么了,</p>
+<img src="..//images/value/ipv4img.png" alt="">
+<p>图中可以看出来写1的都是有数据的,而且都还写满了,所以我们无法该买你子网掩码位置都写满了的位置的IP地址，但是最后还有8个0,这个后面就都是可以改变的,不过最大的改变位数是8位都填上一也就我们只能写192.168.1.1-192.168.1.255,而且我们还要去头去尾还有网络段号，192.168.1.3-192.168.1.254,其实不用想的太麻烦我们只用遵行一个规则就是前奇后偶</p>
+<p>但看到这里又有小伙伴不干了,我不想要这么大我只想要128台电脑,这是我们就需要计算了这就是IP划分了</p>
+<img src="..//images/value/ipv4128.png" alt="">
+<p>看到我改的明白了什么了没有,如果要IP只能从1-128,那么就在子网掩码第一位填上一不过相应的子网掩码也就要产生变化了，这时我们的ip就只能从1-128或者从128-255了,看到这里明白了吗，记得去头去尾去网络段号，遵循前奇后偶的规则</p>
+<h1>NaN</h1>
+<p>知道NaN吗他是一个不规则的数据类型,isNaN()可以用来检测你输入的值如果字串内全是数字它的返回值就是false,如果有字母或者全是字母他的返回值即使true</p>
+<img src="..//images/value/nan.png" alt="">
+<p>我们观察到一个很神奇的现象就是NaN就连自己都不想等的,竟然数据类型等于Number</p>
+<h1>赋值运算</h1>
+<br><br><code>var i=1<br>
+var a=3-i--<br>
+</code>
+<p>看出来a等于多少了吗，这需要你理明白计算过程赋值是从右往左，但计算是从左往右的（除了赋值都是），所以3先减上i然后i在--的所以等于2，如果--在前面就是3了明白了吗</p>
 
 
 
@@ -209,7 +253,7 @@
     
     <br>
     <strong class="update-time">最后更新：</strong>
-    2019-12-06
+    2019-12-07
     <br>
     <strong class="article-titles">本文标题：</strong>
     <a href="http://xiaolin159.github.io/value/" title="数值转换" target="_blank">数值转换</a>
@@ -258,6 +302,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/loopright/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          你真的懂循环和条件判断吗
+        
+      </div>
+    </a>
   
   
     <a href="/data-is-up/" id="article-nav-older" class="article-nav-link-wrap">
@@ -432,11 +485,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">hexo安装</a>
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">数值,进制</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
               </li>
             
               <li class="article-tag-list-item">
@@ -444,7 +497,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
             
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">hexo安装</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">数值,进制</a>
               </li>
             
             <div class="clearfix"></div>
